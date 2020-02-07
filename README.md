@@ -10,12 +10,12 @@ The example takes 'Hello World' to an extreme, with IHello interface, implementa
 # Sharing Tests Between Platforms
 ## Structure
 This example is made up of 6 projects:
-CommonFunctions - .NET Standard
-WindowsHello - .NET Framework
-AndroidHello - Xamarin Android
-CommonTest - .NET Standard
-WindowsTest - .NET Framework
-NUnit.Tests.AndroidHelloTests - Xamarin Android
+* CommonFunctions - .NET Standard
+* WindowsHello - .NET Framework
+* AndroidHello - Xamarin Android
+* CommonTest - .NET Standard
+* WindowsTest - .NET Framework
+* NUnit.Tests.AndroidHelloTests - Xamarin Android
 
 The first three project represent a cross-platform application.  Interfaces and common code are stored in the CommonFunctions class.  Platform-specific implementations of the interfaces are located in the .NET Framework and Xamarin projects.
 
