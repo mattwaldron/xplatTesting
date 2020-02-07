@@ -17,7 +17,8 @@ namespace NUnit.Tests.AndroidHelloTests
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            base.OneTimeSetup(AndroidHelloFactory.GetHellos(), CommonTestUtil.LookupHelloType(MainActivity.helloType));
+            base.OneTimeSetup(AndroidHelloFactory.GetHellos(), 
+                CommonTestUtil.LookupHelloType(MainActivity.helloType));
         }
     }
 }

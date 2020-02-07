@@ -52,6 +52,25 @@ After compiling and installing the app on a device or emulator with Visual Studi
 adb shell am start -a "android.intent.action.MAIN" -c "android.intent.category.LAUNCHER" -n "NUnit.Tests.AndroidHelloTests/crc64f25ab72de175672d.MainActivity" --es helloType casual
 ```
 
+The parameters is retrieved in the test code with Intent.GetStringExtra:
+```csharp
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    {
+        public static string helloType;
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            ...
+            helloType = Intent.GetStringExtra("helloType");
+            
+...
+
+    public void OneTimeSetup()
+    {
+        base.OneTimeSetup(AndroidHelloFactory.GetHellos(), 
+            CommonTestUtil.LookupHelloType(MainActivity.helloType));
+    }
+```
+
 To stop the app, and re-run with a different option, the following commands are used:
 ```
 adb shell am force-stop NUnit.Tests.AndroidHelloTests
